@@ -1,0 +1,39 @@
+using UnityEngine;
+using nyy.System_Component;
+
+namespace nyy.FSMBuilder
+{
+    [CreateAssetMenu(menuName = "Finite State Machine/Action/....", fileName = "new .... Data")]
+    public class #SCRIPTNAME# : PlayerAction
+    {
+        #region PROPERTIES
+         
+        #endregion
+                
+        #region EVENT FUNCTIONS
+        
+        #endregion
+                
+        #region IMPLEMENTED FUNCTIONS
+        
+        public override void Onset(ComponentBase component)
+        {
+                
+        }
+
+        public override void Updating(ComponentBase component)
+        {
+                
+        }        
+         
+        #endregion  
+        
+        #region PUBLIC FUNCTIONS
+        
+        #endregion  
+                
+        #region PRIVATE FUNCTIONS
+        
+        #endregion
+    }
+}

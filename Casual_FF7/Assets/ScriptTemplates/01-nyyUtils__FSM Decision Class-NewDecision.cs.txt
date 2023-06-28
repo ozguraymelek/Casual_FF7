@@ -1,0 +1,34 @@
+using UnityEngine;
+using nyy.System_Component;
+
+namespace nyy.FSMBuilder
+{
+    [CreateAssetMenu(menuName = "Finite State Machine/Decision/..../....", fileName = "new .... Decision")]
+    public class #SCRIPTNAME# : PlayerDecision
+    {
+        #region PROPERTIES
+         
+        #endregion
+                
+        #region EVENT FUNCTIONS
+        
+        #endregion
+                
+        #region IMPLEMENTED FUNCTIONS
+        
+        public override bool Decide(ComponentBase component)
+        {
+            return false;
+        }             
+         
+        #endregion  
+        
+        #region PUBLIC FUNCTIONS
+        
+        #endregion  
+                
+        #region PRIVATE FUNCTIONS
+        
+        #endregion
+    }
+}

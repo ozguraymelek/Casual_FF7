@@ -1,0 +1,72 @@
+using System;
+using nyy.System_ReferenceValue;
+using UnityEngine;
+
+namespace nyy.System_Component
+{
+    public class #SCRIPTNAME#<T> : Component<T>, IComponent<T>
+    {
+        #region PROPERTIES
+        
+        public override T Value 
+        { 
+            get => _val;
+            set => _val = value;
+        }
+        
+        #endregion
+                
+        #region EVENT FUNCTIONS
+        
+        private void Awake()
+        {
+            if (execution == SetExecution.Awake)
+                ValueSet();
+        }
+
+        private void OnEnable()
+        {
+            if (execution == SetExecution.OnEnable)
+                ValueSet();
+        }
+
+        private void Start()
+        {
+            if (execution == SetExecution.Start)
+                ValueSet();
+        }
+        
+        #endregion
+                
+        #region IMPLEMENTED FUNCTIONS
+        
+        public void Request(RequestType reqType, Vector3 float3Value = default(Vector3), string keyword = null, 
+            bool state = true, float floatValue = 0, int intValue = 0)
+        {
+            
+        } 
+         
+        #endregion  
+        
+        #region PUBLIC FUNCTIONS
+        
+        #endregion  
+                
+        #region PRIVATE FUNCTIONS
+
+        private void ValueSet()
+        {
+            _val = executionValue;
+        }
+        
+#pragma warning disable CS0693
+        protected T ChangeType<T>(object o)
+#pragma warning restore CS0693
+        {
+            var conversionType = Nullable.GetUnderlyingType(typeof(T)) ?? typeof(T);
+            return (T)Convert.ChangeType(o, conversionType);
+        }
+        
+        #endregion
+    }
+}

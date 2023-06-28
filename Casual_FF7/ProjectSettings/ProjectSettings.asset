@@ -701,7 +701,23 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: GSA_TIMELINE
+    EmbeddedLinux: GSA_TIMELINE
+    GameCoreScarlett: GSA_TIMELINE
+    GameCoreXboxOne: GSA_TIMELINE
+    LinuxHeadlessSimulation: GSA_TIMELINE
+    Lumin: GSA_TIMELINE
+    Nintendo Switch: GSA_TIMELINE
+    PS4: GSA_TIMELINE
+    PS5: GSA_TIMELINE
+    Stadia: GSA_TIMELINE
+    Standalone: GSA_TIMELINE;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
+    WebGL: GSA_TIMELINE
+    Windows Store Apps: GSA_TIMELINE
+    XboxOne: GSA_TIMELINE
+    iPhone: GSA_TIMELINE
+    tvOS: GSA_TIMELINE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

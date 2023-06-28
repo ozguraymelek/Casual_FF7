@@ -1,0 +1,33 @@
+using UnityEngine;
+using Sirenix.OdinInspector;
+
+namespace nyy.ReferenceValue
+{
+    [CreateAssetMenu(menuName = "Ref Values/...", fileName = "new ...", order = 0)]
+    public class #SCRIPTNAME# : RefValue
+    {
+        #region PROPERTIES
+        
+        [ShowInInspector]
+        public object Value
+        {
+            get => _value;
+
+            set
+            {
+                _value = value;
+                
+                if (OnValueChanged != null)
+                    ValueHasChanged();
+            }
+        }
+        
+        private object _value;       
+        
+        #endregion
+        
+        #region PUBLIC FUNCTIONS
+        
+        #endregion
+    }
+}
