@@ -19,17 +19,11 @@ namespace nyy.FSMImplement
             
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         public override void Updating<T>(Component<T> component)
         {
-            // Walk(component);
-            // Rotate(component);
-            //
-            // Detector(component);
-            //
-            // SetAnimation(component);
-            //
-            // component.animatorComponent.Request(reqType: RequestType.SetBool, keyword: "EnemyDetectedForAutoAttack",
-            //     state: IsEnemyDetectedForAutoAttack.Value);
+            Walk(component);
+            Rotate(component);
         }        
          
         #endregion  
@@ -38,19 +32,21 @@ namespace nyy.FSMImplement
         
         private void Walk<T>(Component<T> component)
         {
-            // component.rigidbodyComponent.Request(reqType: RequestType.Velocity,
-            //     float3: MovementVector.Value * (50 * Time.fixedDeltaTime));
+            var request = typeof(PhysicComponent<Rigidbody>).GetMethod("Request");
+
+            request!.Invoke(component.GetComponent<PhysicComponent<Rigidbody>>(),
+                new object[] { RequestType.Velocity, MovementVector.Value, 50f, 0, false });
         }
         
         private void Rotate<T>(Component<T> component)
         {
-            // if (HorizontalInput.Value == 0 && VerticalInput.Value == 0) return;
-            //
-            // var direction = (Vector3.forward * VerticalInput.Value + Vector3.right * HorizontalInput.Value).normalized;
-            //         
-            // var rotGoal = Quaternion.LookRotation(direction);
-            //         
-            // component.transform.rotation = Quaternion.Slerp(component.transform.rotation, rotGoal, 50 * Time.deltaTime);
+            if (HorizontalInput.Value == 0 && VerticalInput.Value == 0) return;
+            
+            var direction = (Vector3.forward * VerticalInput.Value + Vector3.right * HorizontalInput.Value).normalized;
+                    
+            var rotGoal = Quaternion.LookRotation(direction);
+                    
+            component.transform.rotation = Quaternion.Slerp(component.transform.rotation, rotGoal, 50 * Time.deltaTime);
         }
         
         private void SetAnimation<T>(Component<T> component)
