@@ -17,16 +17,14 @@ namespace nyy.FSMImplement
         
         public override void Onset<T>(Component<T> component)
         {
-            Debug.Log("Idle Start Action");
+            
         }
 
         public override void Updating<T>(Component<T> component)
         {
-            Debug.Log("Idle Update Action");
-            
-            var metSum = typeof(PhysicComponent<Rigidbody>).GetMethod("Request");
-            metSum!.Invoke(component.GetComponent<PhysicComponent<Rigidbody>>(),
-                new object[] { RequestType.Velocity, new Vector3(0f, 0f, 50f), 2, 0, false });
+            // var metSum = typeof(PhysicComponent<Rigidbody>).GetMethod("Request");
+            // metSum!.Invoke(component.GetComponent<PhysicComponent<Rigidbody>>(),
+            //     new object[] { RequestType.Velocity, new Vector3(0f, 0f, 50f), 2, 0, false });
 
 
             // SetAnimation(component);

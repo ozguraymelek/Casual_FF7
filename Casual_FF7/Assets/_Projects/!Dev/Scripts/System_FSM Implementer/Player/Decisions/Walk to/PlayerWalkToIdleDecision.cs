@@ -1,5 +1,6 @@
 using nyy.FSMBuilder;
 using nyy.System_Component;
+using nyy.System_Input;
 using UnityEngine;
 
 namespace nyy.FSMImplement
@@ -19,11 +20,10 @@ namespace nyy.FSMImplement
         
         public override bool Decide<T>(Component<T> component)
         {
-            // var magnitudeOfMovementVector = InputController.Magnitude?.Invoke();
-            // var decide = magnitudeOfMovementVector is 0f;
-            //     
-            // return decide;
-            return false;
+            var magnitudeOfMovementVector = InputController.Magnitude?.Invoke();
+            var decide = magnitudeOfMovementVector is 0f;
+                
+            return decide;
         }             
          
         #endregion  

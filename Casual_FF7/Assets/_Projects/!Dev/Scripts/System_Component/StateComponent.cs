@@ -11,6 +11,7 @@ namespace nyy.System_Component
     {
         #region PROPERTIES
 
+        [ShowInInspector][DisableIn(PrefabKind.All)]
         public override BaseState Value
         {
             get => _val;
@@ -57,6 +58,7 @@ namespace nyy.System_Component
 
             // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
             Request(RequestType.Updating);
+            print(Value);
         }
 
         #endregion

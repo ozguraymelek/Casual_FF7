@@ -1,6 +1,7 @@
 using nyy.System_Component;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using StateComponent = nyy.System_Component.StateComponent;
 
 namespace nyy.FSMBuilder
 {
@@ -22,11 +23,17 @@ namespace nyy.FSMBuilder
         
         public void Execute<T>(Component<T> component)
         {
-            // if (Decision.Decide(component) && NewState is not RemainInState)
-            //     component.StateComponent.Value = NewState;
-            //
-            // else if (Decision.Decide(component) == false && StayState is not RemainInState)
-            //     component.StateComponent.Value = StayState;
+            if (Decision.Decide(component) && NewState is not RemainInState)
+            {
+                var metSum = component.GetType().GetProperty("Value");
+                metSum!.SetValue(component, NewState);
+            }
+            
+            else if (Decision.Decide(component) == false && StayState is not RemainInState)
+            {
+                var metSum = component.GetType().GetProperty("Value");
+                metSum!.SetValue(component, StayState);
+            }
         }
         
         #endregion 
