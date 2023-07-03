@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34fec35c2bb4f2880a04272d23fbc31, type: 3}
   m_Name: BehavioursGenerationDatabase
   m_EditorClassIdentifier: 
-  _genericArgumentKeys: []
+  _genericArgumentKeys:
+  - _typeNameAndAssembly: UnityEngine.Rigidbody, UnityEngine.PhysicsModule
+    _guid: 
   _genericArgumentValues:
   - _array: []
   - _array: []
@@ -22,7 +24,20 @@ MonoBehaviour:
   - _array: []
   - _array: []
   - _array: []
-  _genericTypeValues: []
+  - _array:
+    - _arguments:
+      - _typeNameAndAssembly: UnityEngine.Rigidbody, UnityEngine.PhysicsModule
+        _guid: 
+      _assemblyGUID: 4a8f46811b10628478551c51effc7732
+  _genericTypeValues:
+  - _array:
+    - _typeNameAndAssembly: nyy.System_Component.PhysicComponent`1, Assembly-CSharp
+      _guid: af18dc030ccdd9144adaef530320f901
+      AssemblyGUID: dd6a9f2619f1129459b0acb3be9d34dd
+      _argNames:
+      - T
+      _componentName: 
+      _order: 0
   _genericTypeKeys:
   - _typeNameAndAssembly: GenericScriptableArchitecture.ScriptableEventListener`1,
       GenericScriptableArchitecture
@@ -86,6 +101,13 @@ MonoBehaviour:
   - _typeNameAndAssembly: GenericScriptableArchitecture.VariableInstancer`1, GenericScriptableArchitecture
     _guid: 8396bf53571f40e3b5cb08ec7a6388c2
     AssemblyGUID: be65bfb208453e641bdeab0fe57bc2f0
+    _argNames:
+    - T
+    _componentName: 
+    _order: 0
+  - _typeNameAndAssembly: nyy.System_Component.PhysicComponent`1, Assembly-CSharp
+    _guid: af18dc030ccdd9144adaef530320f901
+    AssemblyGUID: dd6a9f2619f1129459b0acb3be9d34dd
     _argNames:
     - T
     _componentName: 

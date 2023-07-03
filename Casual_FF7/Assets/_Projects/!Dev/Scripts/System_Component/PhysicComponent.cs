@@ -1,29 +1,21 @@
 using System;
-using ExtEvents.OdinSerializer.Utilities;
-using nyy.FSMBuilder;
 using Sirenix.OdinInspector;
-using UnityEditor.Profiling;
 using UnityEngine;
 
 namespace nyy.System_Component
 {
-    public class StateComponent : Component<BaseState>
+    public class PhysicComponent<T> : Component<T>
     {
         #region PROPERTIES
-
-        public override BaseState Value
-        {
+        public override T Value 
+        { 
             get => _val;
-            set
-            {
-                _val = value;
-                if (EnableEvent) OnValueChanged.Invoke();
-            }
+            set => _val = value;
         }
-
-        private BaseState _val;
         
-        public BaseState ExecutionValue;
+        public T ExecutionValue;
+        
+        private T _val;
         
         #endregion
                 
@@ -39,26 +31,14 @@ namespace nyy.System_Component
         {
             if (Execution == SetExecution.OnEnable)
                 ValueSet();
-            
-            
         }
 
         private void Start()
         {
             if (Execution == SetExecution.Start)
                 ValueSet();
-
-            Request(RequestType.OnSet);
         }
-
-        private void Update()
-        {
-            if (_val == null) return;
-
-            // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
-            Request(RequestType.Updating);
-        }
-
+        
         #endregion
                 
         #region IMPLEMENTED FUNCTIONS
@@ -68,18 +48,11 @@ namespace nyy.System_Component
         {
             switch (reqType)
             {
-                case RequestType.OnSet:
+                case RequestType.Velocity:
                     // ReSharper disable once HeapView.PossibleBoxingAllocation
-                    Value.Onset(this);
+                    var converted = ChangeType<Rigidbody>(Value);
+                    converted.velocity = float3Value * floatValue * Time.fixedDeltaTime;
                     break;
-                
-                case RequestType.Updating:
-                    // ReSharper disable once HeapView.PossibleBoxingAllocation
-                    Value.Updating(this);
-                    break;
-                
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(reqType), reqType, null);
             }
         }
          
@@ -90,12 +63,22 @@ namespace nyy.System_Component
         #endregion  
                 
         #region PRIVATE FUNCTIONS
-        
+
         private void ValueSet()
         {
             _val = ExecutionValue;
         }
         
+#pragma warning disable CS0693
+        protected T ChangeType<T>(object o)
+#pragma warning restore CS0693
+        {
+            var conversionType = Nullable.GetUnderlyingType(typeof(T)) ?? typeof(T);
+            return (T)Convert.ChangeType(o, conversionType);
+        }
+        
         #endregion
+
+        
     }
 }

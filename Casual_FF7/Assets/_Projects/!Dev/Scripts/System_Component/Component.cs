@@ -1,4 +1,5 @@
 using System;
+using GenericScriptableArchitecture;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace nyy.System_Component
     public abstract class Component<T> : MonoBehaviour
     {
         #region PROPERTIES
-        
+
         public abstract T Value
         {
             get;
@@ -16,26 +17,31 @@ namespace nyy.System_Component
         
         [ShowInInspector]
         protected bool EnableEvent;
+        public ScriptableEvent OnValueChanged;
         
         [ShowInInspector]
         protected SetExecution Execution;
         
         #endregion
-                
+
         #region EVENT FUNCTIONS
-        
+
         #endregion
-                
+
         #region IMPLEMENTED FUNCTIONS
-        
-        #endregion  
-        
+
+        public abstract void Request(RequestType reqType, Vector3 float3Value = default(Vector3), float floatValue = 0,
+            int intValue = 0,
+            bool state = false);
+
+        #endregion
+
         #region PUBLIC FUNCTIONS
-        
-        #endregion  
-                
+
+        #endregion
+
         #region PRIVATE FUNCTIONS
-        
+
         #endregion
     }
     

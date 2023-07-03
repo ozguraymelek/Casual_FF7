@@ -702,7 +702,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: GSA_TIMELINE
+    Android: GSA_TIMELINE;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
     EmbeddedLinux: GSA_TIMELINE
     GameCoreScarlett: GSA_TIMELINE
     GameCoreXboxOne: GSA_TIMELINE
