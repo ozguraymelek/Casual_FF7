@@ -32,7 +32,7 @@ namespace nyy.System_Component
         #region IMPLEMENTED FUNCTIONS
 
         public abstract void Request(RequestType reqType, Vector3 float3Value = default(Vector3), float floatValue = 0,
-            int intValue = 0,
+            int intValue = 0, string keyword = "",
             bool state = false);
 
         #endregion

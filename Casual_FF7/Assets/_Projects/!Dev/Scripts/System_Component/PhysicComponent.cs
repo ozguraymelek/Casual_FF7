@@ -43,7 +43,8 @@ namespace nyy.System_Component
                 
         #region IMPLEMENTED FUNCTIONS
         
-        public override void Request(RequestType reqType, Vector3 float3Value = default(Vector3), float floatValue = 0, int intValue = 0,
+        public override void Request(RequestType reqType, Vector3 float3Value = default(Vector3), float floatValue = 0,
+            int intValue = 0, string keyword = "",
             bool state = false)
         {
             switch (reqType)

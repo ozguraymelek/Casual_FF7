@@ -15,6 +15,8 @@ MonoBehaviour:
   _genericArgumentKeys:
   - _typeNameAndAssembly: UnityEngine.Rigidbody, UnityEngine.PhysicsModule
     _guid: 
+  - _typeNameAndAssembly: UnityEngine.Animator, UnityEngine.AnimationModule
+    _guid: 
   _genericArgumentValues:
   - _array: []
   - _array: []
@@ -29,11 +31,24 @@ MonoBehaviour:
       - _typeNameAndAssembly: UnityEngine.Rigidbody, UnityEngine.PhysicsModule
         _guid: 
       _assemblyGUID: 4a8f46811b10628478551c51effc7732
+  - _array:
+    - _arguments:
+      - _typeNameAndAssembly: UnityEngine.Animator, UnityEngine.AnimationModule
+        _guid: 
+      _assemblyGUID: a882beb4bc90133429cb4451752a1736
   _genericTypeValues:
   - _array:
     - _typeNameAndAssembly: nyy.System_Component.PhysicComponent`1, Assembly-CSharp
       _guid: af18dc030ccdd9144adaef530320f901
       AssemblyGUID: dd6a9f2619f1129459b0acb3be9d34dd
+      _argNames:
+      - T
+      _componentName: 
+      _order: 0
+  - _array:
+    - _typeNameAndAssembly: nyy.System_Component.ArtComponent`1, Assembly-CSharp
+      _guid: 9c25f5712a0312d4cb67c2e7d996b49f
+      AssemblyGUID: 1473a05593c6e0e4388cce3878be027f
       _argNames:
       - T
       _componentName: 
@@ -108,6 +123,13 @@ MonoBehaviour:
   - _typeNameAndAssembly: nyy.System_Component.PhysicComponent`1, Assembly-CSharp
     _guid: af18dc030ccdd9144adaef530320f901
     AssemblyGUID: dd6a9f2619f1129459b0acb3be9d34dd
+    _argNames:
+    - T
+    _componentName: 
+    _order: 0
+  - _typeNameAndAssembly: nyy.System_Component.ArtComponent`1, Assembly-CSharp
+    _guid: 9c25f5712a0312d4cb67c2e7d996b49f
+    AssemblyGUID: 1473a05593c6e0e4388cce3878be027f
     _argNames:
     - T
     _componentName: 

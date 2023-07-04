@@ -26,6 +26,7 @@ MonoBehaviour:
       GenericScriptableArchitecture
   - _typeNameAndAssembly: GenericScriptableArchitecture.VariableInstancer`1, GenericScriptableArchitecture
   - _typeNameAndAssembly: nyy.System_Component.PhysicComponent`1, Assembly-CSharp
+  - _typeNameAndAssembly: nyy.System_Component.ArtComponent`1, Assembly-CSharp
   _values:
   - _keys: []
     _values: []
@@ -49,3 +50,9 @@ MonoBehaviour:
     _values:
     - _typeNameAndAssembly: GenericUnityObjects.ConcreteClasses.ConcreteClass_4a8f46811b10628478551c51effc7732,
         z_PhysicComponent_Rigidbody
+  - _keys:
+    - _collection:
+      - _typeNameAndAssembly: UnityEngine.Animator, UnityEngine.AnimationModule
+    _values:
+    - _typeNameAndAssembly: GenericUnityObjects.ConcreteClasses.ConcreteClass_a882beb4bc90133429cb4451752a1736,
+        z_ArtComponent_Animator
